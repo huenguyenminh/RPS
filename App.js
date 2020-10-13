@@ -26,9 +26,11 @@ const App = () => {
   const [rotate, setRotate] = useState("");
 
   const [result, setResult] = useState("Start");
+  const [active, setActive] = useState();
 
   function selectTool(val) {
     setPlayer(val);
+    setActive(val);
     switch (val) {
       case 1:
         {
@@ -106,6 +108,7 @@ const App = () => {
         {/* UP */}
         <View style={[styles.up]}>
           <Text style={[styles.txtWhite, styles.title]}>{result}</Text>
+          <Text style={[styles.txtWhite]}>Active: {active}</Text>
         </View>
         {/* MIDDLE */}
         <View style={[styles.flex1, styles.middle]}>
@@ -140,10 +143,10 @@ const App = () => {
                       styles.txtWhite,
                       styles[
                         computer === 1
-                          ? "iconR"
+                          ? "iconR2"
                           : computer === 2
-                          ? "iconP"
-                          : "iconS"
+                          ? "iconP2"
+                          : "iconS2"
                       ],
                     ]}
                     size={50}
@@ -158,7 +161,7 @@ const App = () => {
           <View styles={[styles.playerTool]}>
             <TouchableOpacity
               onPress={() => selectTool(1)}
-              style={[styles.selectTool, styles.center]}
+              style={[styles.selectTool, styles.center, styles[ player === 1 ? 'active' : '']]}
             >
               <FontAwesome5
                 name={"hand-rock"}
@@ -169,7 +172,7 @@ const App = () => {
 
             <TouchableOpacity
               onPress={() => selectTool(2)}
-              style={[styles.selectTool, styles.center]}
+              style={[styles.selectTool, styles.center, styles[ player === 2 ? 'active' : '']]}
             >
               <FontAwesome5
                 name={"hand-paper"}
@@ -180,7 +183,7 @@ const App = () => {
 
             <TouchableOpacity
               onPress={() => selectTool(3)}
-              style={[styles.selectTool, styles.center]}
+              style={[styles.selectTool, styles.center, styles[ player === 3 ? 'active' : '']]}
             >
               <FontAwesome5
                 name={"hand-scissors"}

@@ -46,6 +46,9 @@ export const styles = StyleSheet.create({
     backgroundColor: 'black',
     opacity: 0.3
   },
+  active: {
+    opacity: 1
+  },
   center: {
     alignItems: 'center',
     justifyContent: 'center'
@@ -59,24 +62,32 @@ export const styles = StyleSheet.create({
   },
   iconR:{
     transform: [
-      { rotateX: "0deg" },
-      { rotateZ: "90deg" },
+      { rotate: "90deg" },
       { translateX: 90 }
     ]
   },
   iconP:{
     transform: [
-      { rotateX: "0deg" },
-      { rotateZ: "90deg" },
+      { rotate: "90deg" },
       { translateX: 90 }
     ]
   },
   iconS:{
     transform: [
-      { rotateX: "0deg" },
       { rotateY: "180deg" },
-      { translateX: 90 }
+      { translateX: 100 }
     ]
-  }
+  },
+  iconR2:{
+    transform: [
+      { rotateX: "-90deg"}
+    ]
+  },
+  iconP2:{
+    transform: [
+      { rotate: "-90deg" }
+    ]
+  },
+  iconS3:{}
 
 });
